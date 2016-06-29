@@ -2,9 +2,9 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>uk.co.codezen</groupId>
-    <artifactId>redlinerpm-maven-plugin</artifactId>
-    <version>2.1</version>
+    <groupId>com.teradata</groupId>
+    <artifactId>redlinerpm-maven-plugin-td</artifactId>
+    <version>2.1.1</version>
     <packaging>maven-plugin</packaging>
 
     <name>maven-redlinerpm-plugin Maven Mojo</name>
@@ -204,9 +204,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.redline-rpm</groupId>
-            <artifactId>redline</artifactId>
-            <version>1.2.2</version>
+            <groupId>com.teradata</groupId>
+            <artifactId>redline-td</artifactId>
+            <version>1.2.2.1</version>
         </dependency>
 
         <dependency>
