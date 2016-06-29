@@ -29,9 +29,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/spaulg/redlinerpm-maven-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com/spaulg/redlinerpm-maven-plugin.git</developerConnection>
-        <url>https://github.com/spaulg/redlinerpm-maven-plugin</url>
+        <connection>scm:git:https://github.com/teradata/redlinerpm-maven-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com/teradata/redlinerpm-maven-plugin.git</developerConnection>
+        <url>https://github.com/teradata/redlinerpm-maven-plugin</url>
     </scm>
 
     <distributionManagement>
