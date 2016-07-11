@@ -44,6 +44,11 @@ final public class RpmPackage
     private RpmMojo mojo = null;
 
     /**
+     * Name of output rpm that will override convention based name
+     */
+    private String nameOverride = null;
+
+    /**
      * Package name
      */
     private String name = null;
@@ -288,6 +293,26 @@ final public class RpmPackage
     }
 
     /**
+     * Set override name
+     *
+     * @param nameOverride override name
+     */
+    public void setNameOverride(String nameOverride)
+    {
+        this.nameOverride = nameOverride;
+    }
+
+    /**
+     * Get override name
+     *
+     * @return Override name
+     */
+    public String getNameOverride()
+    {
+        return nameOverride;
+    }
+
+    /**
      * Set package version
      *
      * @param version Package version
@@ -389,9 +414,14 @@ final public class RpmPackage
     public String getFinalName()
     {
         if (null == this.finalName) {
-            this.finalName = String.format("%s-%s-%s.%s.rpm",
-                    this.getName(), this.getVersion(), this.getRelease(),
-                    this.getArchitecture().toString().toLowerCase());
+            if (null == this.nameOverride) {
+              this.finalName = String.format("%s-%s-%s.%s.rpm",
+                      this.getName(), this.getVersion(), this.getRelease(),
+                      this.getArchitecture().toString().toLowerCase());
+            }
+            else {
+              this.finalName = getNameOverride();
+            }
         }
 
         return finalName;
