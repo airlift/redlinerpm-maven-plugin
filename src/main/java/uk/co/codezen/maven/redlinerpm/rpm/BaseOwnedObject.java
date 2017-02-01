@@ -54,9 +54,6 @@ public abstract class BaseOwnedObject
     public int getModeOrDefault()
     {
         if (0 == this.fileMode) {
-            System.err.println(this.getPackage());
-            System.err.println(this.getPackage().getMojo());
-            System.err.println(this.getPackage().getMojo().getDefaultFileMode());
             return this.getPackage().getMojo().getDefaultFileMode();
         }
         else {
