@@ -38,7 +38,6 @@ final public class DirectoryScannerFactory
         ds.setIncludes(includes);
         ds.setExcludes(excludes);
         ds.setBasedir(baseDir);
-        ds.setFollowSymlinks(false);
         ds.setCaseSensitive(true);
 
         return ds;

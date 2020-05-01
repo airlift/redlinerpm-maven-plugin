@@ -30,8 +30,12 @@ import uk.co.codezen.maven.redlinerpm.rpm.exception.InvalidRpmPackageRuleDirecti
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.security.NoSuchAlgorithmException;
 import java.util.*;
+
+import static java.nio.file.Files.isSymbolicLink;
+import static java.nio.file.Files.readSymbolicLink;
 
 /**
  * RPM file
@@ -301,6 +305,25 @@ final public class RpmPackageRule extends BaseOwnedObject
             String group = this.getGroupOrDefault();
             int fileMode = this.getModeOrDefault();
 
+            File source = new File(sourcePath);
+
+            if (isSymbolicLink(source.toPath())) {
+                Path targetPath = readSymbolicLink(source.toPath());
+
+                this.getLog().debug(String.format("Adding symlink: %s -> %s to path %s with owner '%s', " +
+                                "group '%s', with file mode %o.",
+                        sourcePath, targetPath, destinationPath, owner, group, fileMode));
+
+                builder.addLink(
+                        destinationPath,
+                        targetPath.toString(),
+                        fileMode,
+                        owner,
+                        group
+                );
+
+                continue;
+            }
 
             this.getLog().debug(String.format("Adding file: %s to path %s with owner '%s', " +
                     "group '%s', with file mode %o.",
@@ -308,7 +331,7 @@ final public class RpmPackageRule extends BaseOwnedObject
 
             builder.addFile(
                 destinationPath,
-                new File(sourcePath),
+                source,
                 fileMode,
                 this.getDirectives(),
                 owner,

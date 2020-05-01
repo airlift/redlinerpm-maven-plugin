@@ -16,6 +16,6 @@ public class DirectoryScannerFactoryTest
 
         assertEquals(DirectoryScanner.class, ds.getClass());
         assertEquals(true, ds.isCaseSensitive());
-        assertEquals(false, ds.isFollowSymlinks());
+        assertEquals(true, ds.isFollowSymlinks());
     }
 }
