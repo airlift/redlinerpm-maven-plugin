@@ -28,8 +28,7 @@
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/airlift/redlinerpm-maven-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com/airlift/redlinerpm-maven-plugin.git</developerConnection>
+        <connection>scm:git:git@github.com:airlift/redlinerpm-maven-plugin.git</connection>
         <url>https://github.com/airlift/redlinerpm-maven-plugin</url>
     </scm>
 
