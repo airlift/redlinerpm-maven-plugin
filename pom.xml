@@ -3,7 +3,7 @@
 
     <groupId>io.airlift.maven.plugins</groupId>
     <artifactId>redlinerpm-maven-plugin</artifactId>
-    <version>2.1.7-SNAPSHOT</version>
+    <version>2.1.7</version>
     <packaging>maven-plugin</packaging>
 
     <name>redlinerpm-maven-plugin</name>
@@ -30,7 +30,7 @@
     <scm>
         <connection>scm:git:git@github.com:airlift/redlinerpm-maven-plugin.git</connection>
         <url>https://github.com/airlift/redlinerpm-maven-plugin</url>
-      <tag>HEAD</tag>
+      <tag>2.1.7</tag>
   </scm>
 
     <distributionManagement>
